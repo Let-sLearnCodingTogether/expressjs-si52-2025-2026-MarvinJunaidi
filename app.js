@@ -1,5 +1,6 @@
 import express from "express"
 import web from "./routes/web.js"
+import api from "./routes/api.js"
 
 const app = express()
 
@@ -10,6 +11,7 @@ app.use(express.static('public'))
 app.set('view engine', 'ejs')
 
 app.use(web)
+app.use("/api", api)
 
 console.log("oke gas");
 app.listen(3000, () => {
