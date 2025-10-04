@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema(
     {
-        Username : {
+        username : {
             type : String,
             required : [true, "User nama wajib di sisi"],
             unique : true,
@@ -27,6 +27,6 @@ const UserSchema = new mongoose.Schema(
     
 )
 
-const UserModel = mongoose.Model("User", UserSchema)
+const UserModel = mongoose.model("User", UserSchema)
 
 export default UserModel
