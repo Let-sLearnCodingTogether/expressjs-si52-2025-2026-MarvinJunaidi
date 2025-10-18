@@ -1,11 +1,11 @@
 export const publicProfile =
     (req, res) => {
-        const username = req.params.username
+        const username = req.params.username;
 
-        res.render('public-profile', {
-            title: username,
-            username: username,
-            profile : username,
-            bio: "TAOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
-        })
-    }
+        const dataForView = {
+            title : `Profil ${username}`, 
+            username : username,
+            bio : "TAOOOOOOOOOOOO"
+        }
+        res.render("public-profile", dataForView);
+    };
