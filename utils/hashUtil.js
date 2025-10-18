@@ -1,15 +1,10 @@
-// Mengimpor pustaka bcrypt yang akan kita gunakan untuk hashing.
 import bcrypt from "bcrypt";
 
 /**
- * Fungsi untuk mengubah teks biasa (password) menjadi hash.
  * @param {string} plainText - Password yang dimasukkan oleh pengguna.
  * @returns {string} - Hash dari password.
  */
 export const hash = (plainText) => {
-	// bcrypt.hashSync melakukan hashing secara sinkron.
-	// Angka 10 adalah "salt rounds", yaitu tingkat kompleksitas hash.
-	// Semakin tinggi angkanya, semakin aman tapi semakin lama prosesnya. 10 adalah standar yang baik.
 	return bcrypt.hashSync(plainText, 10);
 };
 

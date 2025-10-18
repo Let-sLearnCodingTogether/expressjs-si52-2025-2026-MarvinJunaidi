@@ -1,6 +1,6 @@
 import UserModel from "../models/userModel.js";
-// 1. Impor fungsi 'hash' dari utilitas yang baru kita buat.
 import { hash, compare } from "../utils/hashUtil.js";
+import { jwtSignUtil } from "../utils/jwtSignUtil.js";
 
 export const register = async (req, res) => {
 	try {
@@ -66,7 +66,7 @@ export const register = async (req, res) => {
 				username: user.username,
 				email: user.email,
 				// Nanti kita akan ganti "TOKEN" ini dengan JSON Web Token (JWT) asli.
-				token: "TOKEN_PLACEHOLDER",
+				token: jwtSignUtil(user),
 			},
 		});
 
